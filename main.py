@@ -48,5 +48,5 @@ if __name__ == "__main__":
 
     print(sort_list(word_list))
 
-def limpiar_valores(lista):
-    return list(filter(None, lista))
+def limpiar_valores(items):
+    return list(filter(None, items))
