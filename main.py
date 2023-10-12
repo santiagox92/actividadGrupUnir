@@ -5,10 +5,14 @@ Organization: UNIR
 
 import os
 import sys
+from translate import Translator
 
 DEFAULT_FILENAME = "words.txt"
 DEFAULT_DUPLICATES = False
 
+def translate_to_english(word, source_lang="es", target_lang="en"):
+    translator = Translator(from_lang=source_lang, to_lang=target_lang)
+    return translator.translate(word)
 
 def sort_list(items, ascending=True):
     if not isinstance(items, list):
@@ -45,6 +49,9 @@ if __name__ == "__main__":
 
     if remove_duplicates:
         word_list = remove_duplicates_from_list(word_list)
+
+    translated_words = [translate_to_english(word) for word in sort_list(word_list)]
+    print(translated_words)
 
     print(sort_list(word_list))
 
