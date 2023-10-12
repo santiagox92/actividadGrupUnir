@@ -47,3 +47,6 @@ if __name__ == "__main__":
         word_list = remove_duplicates_from_list(word_list)
 
     print(sort_list(word_list))
+
+def limpiar_valores(lista):
+    return list(filter(None, lista))
